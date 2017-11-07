@@ -1,12 +1,12 @@
 def second_index(text: str, symbol: str):
     """
-        returns the second index of symbol in a given text
+        returns the second index of a symbol in a given text
     """
     # your code here
     return 0
 
 if __name__ == '__main__':
-    #These "asserts" using only for self-checking and not necessary for auto-testing
+    #These "asserts" are used only for self-checking and not necessarily for an auto-testing
     print('Example:')
     print(second_index("sims", "s"))
     assert second_index("sims", "s") == 3, "First"
