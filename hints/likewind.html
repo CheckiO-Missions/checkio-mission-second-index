@@ -1,0 +1,86 @@
+<body data-author="likewind">
+
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission.
+    </div>
+    <div class="answer">
+        You have to make sure that there is really 2 (or more) elements which we try to find and then find the second of them.
+    </div>
+</div>    
+
+<div class="question-answer">
+    <div class="question">
+        Could you break this explanation into smaller steps?.
+    </div>
+    <div class="answer">
+        First of all you have to make sure that the "symbol" are in the text >= 2 times.
+        If it's not - then return None.
+        Use <a href='https://docs.python.org/3/library/stdtypes.html?highlight=count#str.count'>count</a> method for this.
+    </div>
+</div>    
+    
+<div class="question-answer">
+    <div class="question">
+        How the right code should looks like?
+    </div>
+    <div class="answer">
+        Something like this:
+        <pre class="brush: python">
+        def second_index(text, symbol):
+            if text.count(symbol) < 2: 
+                return None</pre>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        What's next?
+    </div>
+    <div class="answer">
+        Now you can find the first "symbol".
+        Use <a href='https://docs.python.org/3/library/stdtypes.html?highlight=find#str.find'>find</a> method for this.
+    </div>
+</div>    
+
+<div class="question-answer">
+    <div class="question">
+        And the code is...
+    </div>
+    <div class="answer">
+        Try this one:
+        <pre class="brush: python">
+        def second_index(text, symbol):
+            if text.count(symbol) < 2: 
+                return None
+            else:
+                return text.find(symbol)</pre>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        But we need the second one, or not?
+    </div>
+    <div class="answer">
+        Yes, you are right. For this task we can start our searching not from the begin,
+        but from the element, which goes after first "symbol".
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Nothing works... Help!
+    </div>
+    <div class="answer">
+        Your code should look like this:
+        <pre class="brush: python">
+        def second_index(text, symbol):
+            if text.count(symbol) < 2: 
+                return None
+            else:
+                return text.find(symbol, text.find(symbol) + 1)</pre>
+    </div>
+</div>
+        
+</body>
