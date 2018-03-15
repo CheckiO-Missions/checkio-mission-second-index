@@ -5,7 +5,7 @@
         I have no idea how to start solving this mission.
     </div>
     <div class="answer">
-        You have to make sure that there is really 2 (or more) elements which we try to find and then find the second of them.
+        You can find the first symbol, then move forward by 1 char and from this point find the symbol in the second time.
     </div>
 </div>    
 
@@ -14,7 +14,7 @@
         Could you break this explanation into smaller steps?.
     </div>
     <div class="answer">
-        First of all you have to make sure that the "symbol" are in the text >= 2 times.
+        First of all you have to make sure that the symbol are in the text >= 2 times.
         If it's not - then return None.
         Use <a href='https://docs.python.org/3/library/stdtypes.html?highlight=count#str.count'>count</a> method for this.
     </div>
@@ -38,7 +38,7 @@
         What's next?
     </div>
     <div class="answer">
-        Now you can find the first "symbol".
+        Now you can find the first symbol.
         Use <a href='https://docs.python.org/3/library/stdtypes.html?highlight=find#str.find'>find</a> method for this.
     </div>
 </div>    
@@ -54,7 +54,9 @@
             if text.count(symbol) < 2: 
                 return None
             else:
-                return text.find(symbol)</pre>
+                first = text.find(symbol)</pre>
+        For example, if we have the text "I'm learning Python and nothing else", we searching "e" in it and we will use
+        our function to this text, we will get 5, because 5 - is the index of first "e".
     </div>
 </div>
 
@@ -64,7 +66,7 @@
     </div>
     <div class="answer">
         Yes, you are right. For this task we can start our searching not from the begin,
-        but from the element, which goes after first "symbol".
+        but from the element, which goes after first symbol.
     </div>
 </div>
 
@@ -79,7 +81,11 @@
             if text.count(symbol) < 2: 
                 return None
             else:
-                return text.find(symbol, text.find(symbol) + 1)</pre>
+                first = text.find(symbol)
+                return text.find(symbol, first + 1)</pre>
+        So in this case, if we use this code to our previous sentence "I'm learning Python and nothing else",
+        we will get 32, because we've started from 6th(5+1) position, which is letter "a" ("I'm leArn...") and first
+        letter "e" is not included in this interval.
     </div>
 </div>
         
