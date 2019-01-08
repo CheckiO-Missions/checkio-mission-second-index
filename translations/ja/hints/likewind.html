@@ -1,0 +1,100 @@
+<body data-author="likewind">
+
+<div class="question-answer">
+    <div class="question">
+        どうやって解けばいいかわかりません。
+    </div>
+    <div class="answer">
+        文字列の中から、探している文字が最初に現れる箇所を探しましょう。見つかったら、その場所に移動して、もう一度探しましょう。それが二番目です。
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        何から始めればいいんでしょうか？
+    </div>
+    <div class="answer">
+        最初に、探している文字が少なくとも二回出現するかを確かめましょう。
+        出現しないなら、Noneを返す必要があります。
+        <a href='https://docs.python.org/3/library/stdtypes.html?highlight=\
+count#str.count'>str.count</a>メソッドが役に立つでしょう。
+    </div>
+</div>    
+    
+<div class="question-answer">
+    <div class="question">
+        どんなコードができて、どのように動くのでしょうか？
+    </div>
+    <div class="answer">
+        最初はこのようになるでしょう:
+        <pre class="brush: python">
+def second_index(text, symbol):
+    if text.count(symbol) < 2: 
+        return None</pre>
+        例えば、入力が'some text'で、探したい文字が'e'なら、Noneを返しません。
+        しかし、探したい文字を's'にした場合、'some text'.count ('s') == 1 で、かつ1 < 2を満たすので、Noneを返すでしょう。
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        次はどうすればいいでしょう？
+    </div>
+    <div class="answer">
+        探している文字が二回現れることがわかったので、次は最初に現れる場所を見つけましょう。
+        <a href='https://docs.python.org/3/library/stdtypes.html?highlight=find#str.find'>find</a> メソッドが役に立ちます。
+        これは文字列から探している文字が最初に現れるインデックスを返します。例えば:<br>
+        <pre class="brush: python">
+text = 'abcdec'
+symbol = 'c'
+first = text.find(symbol, 0)</pre>
+        ここで、括弧の中の0は省略可能です。この値は、関数が何番目の文字から検索をするかを表しており、0は文字列の一番始めを意味します。
+        この例では、'abcdec'の中で最初に現れる'c'のインデックスは2なので、'first'は2になります。
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        つまり…？
+    </div>
+    <div class="answer">
+        こうなるでしょう。
+        <pre class="brush: python">
+def second_index(text, symbol):
+    if text.count(symbol) < 2: 
+        return None
+    first = text.find(symbol)</pre>
+        つまり、もしtextに探している文字が2回未満しか現れなければ、Noneを返します。
+        もし2回以上現れるなら、文字列の中で最初に現れるインデックスを見つけます。
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        でも、二回目に現れる場所が必要なんですよね？
+    </div>
+    <div class="answer">
+        そうです。つまり、検索は最初からではなく、最初に探している文字が見つかった場所から検索しなければなりません。
+        この場所は'first'で見つけています。要するに、findで検索を開始する場所を0からfirst+1にすればよいのです。
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        まだわかりません！
+    </div>
+    <div class="answer">
+        最終的にはこうなります:
+        <pre class="brush: python">
+def second_index(text, symbol):
+    if text.count(symbol) < 2: 
+        return None
+    first = text.find(symbol)
+    return text.find(symbol, first + 1)</pre>
+        例えばこの関数で 'a' を "I'm learning Python and nothing else" の中から探すとき、20を返します。
+        このコードによると、最初に 'a' が現れるのインデックスは6で (first = 6)、
+        その次 (first + 1) から検索を開始し、次に 'a' が現れるインデックスを20と決めることができます。
+    </div>
+</div>
+        
+</body>
