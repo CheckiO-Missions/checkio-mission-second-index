@@ -45,6 +45,10 @@ TESTS = {
         {
             "input": ["see you", "e"],
             "answer": 2
+        },
+        {
+            "input": ["three occurrences", "r"],
+            "answer": 10
         }
     ]
 }
