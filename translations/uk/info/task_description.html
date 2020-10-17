@@ -1,0 +1,46 @@
+<p>
+   Вам дано дві стрічки, і ви повинні знайти індекс другого входження другої стрічки в першій.
+</p>
+
+<p>
+  Давайте розглянемо перший приклад, де вам потрібно знайти друге входження "s" у слові "sims". Легко знайти його перше виникнення за допомогою функції
+{% if interpreter.slug == "js-node" %}
+
+	<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">indexOf</a>
+
+{% else %}
+
+	<a href="https://docs.python.org/3/library/stdtypes.html#str.index">index</a> or <a href="https://docs.python.org/3/library/stdtypes.html#str.find">find</a> 
+
+{% endif %}
+
+	яка вкаже що "s" є першим символом в слові "sims" і його індекс є 0. Але нам потрібно знайти другу"s" яка є четвертою в рядку і це означає що індекс другого входження є (і це відповідь до задачі) 3. 
+</p>
+
+<p>
+    <strong>Вхідні дані: </strong> Дві стрічки. 
+</p>
+
+<p>
+    <strong>Вихідні дані: </strong> Ціле число або {% if interpreter.slug == "js-node" %}undefined{% else %}None{% endif %}
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Приклад:</strong>
+    </p>
+
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">secondIndex("sims", "s") == 3
+secondIndex("find the river", "e") == 12
+secondIndex("hi", " ")  == undefined
+</pre>
+{% else %}
+<pre class="brush: python">second_index("sims", "s") == 3
+second_index("find the river", "e") == 12
+second_index("hi", " ") is None
+</pre>
+{% endif %}
+</div>
