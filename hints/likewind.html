@@ -17,7 +17,7 @@
     <div class="answer">
         First of all, you need to make sure that the required character actually occurs in the string at least two times.
         If it's not the case, the program should return None.
-        The <a href='https://docs.python.org/3/library/stdtypes.html?highlight=count#str.count'>str.count</a> method will help you.
+        The <a href='https://docs.python.org/3/library/stdtypes.html?highlight=count#str.count'>str.count()</a> method will help you.
     </div>
 </div>    
     
@@ -63,7 +63,7 @@ first = text.find(symbol, 0)</pre>
     <div class="answer">
         Something like this:
         <pre class="brush: python">
-def second_index(text, symbol):
+def second_index(text: str, symbol: str) -> [int, None]:
     if text.count(symbol) < 2: 
         return None
     first = text.find(symbol)</pre>
@@ -89,7 +89,7 @@ def second_index(text, symbol):
     <div class="answer">
         The final version of the program will look like this:
         <pre class="brush: python">
-def second_index(text, symbol):
+def second_index(text: str, symbol: str) -> [int, None]:
     if text.count(symbol) < 2: 
         return None
     first = text.find(symbol)
