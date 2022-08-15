@@ -1,0 +1,28 @@
+{% comment %}New initial code template{% endcomment %}
+{% block env %}{% endblock env %}
+
+{% block start %}
+def second_index(text: str, symbol: str) -> [int, None]:
+    """
+        returns the second index of a symbol in a given text
+    """
+    # your code here
+    return 0
+
+
+{% endblock start %}
+
+{% block example %}
+print('Example:')
+print(second_index("sims", "s"))
+{% endblock %}
+
+{% block tests %}
+{% for t in tests %}
+assert {% block call %}second_index({{t.input|p_args}})
+{% endblock %} == {% block result %}{{t.answer|p}}{% endblock %}{% endfor %}
+{% endblock %}
+
+{% block final %}
+print("The mission is done! Click 'Check Solution' to earn rewards!")
+{% endblock final %}

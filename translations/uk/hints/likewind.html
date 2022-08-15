@@ -1,0 +1,104 @@
+<body data-author="likewind">
+
+<div class="question-answer">
+    <div class="question">
+        Я не знаю, як вирішити це завдання.
+    </div>
+    <div class="answer">
+        Ти можеш знайти перше входження символу, який шукаєш, у рядку. Після цього перемістись на один символ далі по
+        рядку і знову знайди той самий символ. Це буде його друге входження в рядок.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        З чого мені почати?
+    </div>
+    <div class="answer">
+        Перш за все, тобі потрібно переконатися, що потрібний символ дійсно зустрічається в рядку принаймні двічі.
+        Якщо це не так, програма має повернути None. Тобі допоможе метод
+        <a href='https://docs.python.org/3/library/stdtypes.html?highlight=count#str.count'>str.count()</a>.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Як має виглядати код і як він працює?
+    </div>
+    <div class="answer">
+        Перша частина програми може виглядати так:
+        <pre class="brush: python">
+def second_index(text, symbol):
+    if text.count(symbol) < 2:
+        return None</pre>
+        Наприклад, якщо у нас є рядок "some text" і ми перевіряємо букву «e», то програма не поверне None. Але якщо ми оберемо
+        літеру 's' для пошуку, тоді програма поверне None, оскільки 'some text'.count ('s') == 1
+        і виконується умова 1 < 2.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Що далі?
+    </div>
+    <div class="answer">
+        Тепер, коли ти знаєш, що в рядку дійсно принаймні два обов'язкових символи, настав час знайти
+        позицію першого входження. Метод
+        <a href='https://docs.python.org/3/library/stdtypes.html?highlight=find#str.find'>str.find()</a>
+        допоможе тобі у цьому. Він повертає індекс першого символу, знайденого в рядку. Наприклад:<br>
+        <pre class="brush: python">
+text = 'abcdec'
+symbol = 'c'
+first = text.find(symbol, 0)</pre>
+        Зверни увагу, що 0 необов’язковий у дужках. Це лише показує, звідки функція
+        починає пошук символу (0 означає, що він починається з самого початку рядка).
+        У цьому випадку "first" матиме індекс "2", оскільки символ "с" стоїть на позиції з індексом 2.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Як у коді це виглядатиме?
+    </div>
+    <div class="answer">
+        Щось на зразок цього:
+        <pre class="brush: python">
+def second_index(text: str, symbol: str) -> [int, None]:
+    if text.count(symbol) < 2:
+        return None
+    first = text.find(symbol)</pre>
+        Таким чином, якщо у нашому вхідному тексті необхідний елемент зустрічається менше ніж двічі, функція поверне None.
+        Якщо він зустрічається 2 або більше разів - функція знайде перше входження символу в рядку.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Але нам потрібен другий випадок, чи не так?
+    </div>
+    <div class="answer">
+        Це вірно. Тому ми починаємо пошук не з першого символу у рядку, а з наступного за позицією символу.
+        Щоб досягти цього, нам просто потрібно змінити початкову позицію пошуку з 0 на first+1.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Мені потрібна допомога!
+    </div>
+    <div class="answer">
+        Остаточна версія програми буде виглядати так:
+        <pre class="brush: python">
+def second_index(text: str, symbol: str) -> [int, None]:
+    if text.count(symbol) < 2:
+        return None
+    first = text.find(symbol)
+    return text.find(symbol, first + 1)</pre>
+        Якщо ми спробуємо знайти символ "і" у реченні «Я вивчаю Python і більше нічого» за допомогою цієї функції,
+        ми отримаємо 19. Тому що спочатку ми визначимо, що символ "і" зустрічається вперше в позиції з індексом 16 (first = 16),
+        а потім, коли ми починаємо шукати з наступного символу (first + 1), ми визначимо, що зустрічається наступний символ "і"
+        в позиції з індексом 19.
+    </div>
+</div>
+
+</body>
