@@ -5,8 +5,8 @@
         I have no idea how to solve this task.
     </div>
     <div class="answer">
-        You can find the first occurrence of the character you are looking for in a string. After that move one character further along the string and find the same character again. 
-        This will be its second occurrence in the string.
+        <p>You can find the first occurrence of the character you are looking for in a string. After that move one character further along the string and find the same character again. 
+        This will be its second occurrence in the string.</p>
     </div>
 </div>    
 
@@ -15,9 +15,9 @@
         Where do I start?
     </div>
     <div class="answer">
-        First of all, you need to make sure that the required character actually occurs in the string at least two times.
+        <p>First of all, you need to make sure that the required character actually occurs in the string at least two times.
         If it's not the case, the program should return None.
-        The <a href='https://docs.python.org/3/library/stdtypes.html?highlight=count#str.count'>str.count()</a> method will help you.
+        The <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=count#str.count'>str.count()</a> method will help you.</p>
     </div>
 </div>    
     
@@ -26,14 +26,15 @@
         What should code look like and how does it work?
     </div>
     <div class="answer">
-        The first part of the program might look like this:
+        <p>The first part of the program might look like this:</p>
         <pre class="brush: python">
 def second_index(text, symbol):
+
     if text.count(symbol) < 2: 
         return None</pre>
-        For example, if we have a string 'some text' and we are checking the letter 'e', then the program won't return None. But if we substitute
+        <p>For example, if we have a string 'some text' and we are checking the letter 'e', then the program won't return None. But if we substitute
         the letter 's' for the symbol argument, then the program will return None, since 'some text'.count ('s') == 1 
-        and the condition 1 < 2 is met.
+        and the condition 1 < 2 is met.</p>
     </div>
 </div>
 
@@ -42,17 +43,17 @@ def second_index(text, symbol):
         What’s next?
     </div>
     <div class="answer">
-        Now, when you've made sure that there really are at least 2 required characters in the string, it's high time to find  
-        the position of the first occurrence. The <a href='https://docs.python.org/3/library/stdtypes.html?highlight=find#str.find'>find</a> method 
+        <p>Now, when you've made sure that there really are at least 2 required characters in the string, it's high time to find  
+        the position of the first occurrence. The <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=find#str.find'>find</a> method 
         will help you with that.
-        It returns the index of the first character occurrence found in the string. For example:<br>
+        It returns the index of the first character occurrence found in the string. For example:</p>
         <pre class="brush: python">
 text = 'abcdec'
 symbol = 'c'
 first = text.find(symbol, 0)</pre>
-        Please note, that 0 is optional in parentheses. This only shows where the function
+        <p>Please note, that 0 is optional in parentheses. This only shows where the function
         starts looking for symbol (0 means that it starts from the very beginning of the string). 
-        In this case, the 'first' will equal 2, since the character 'c' is in the position with the index 2.
+        In this case, the 'first' will equal 2, since the character 'c' is in the position with the index 2.</p>
     </div>
 </div>    
 
@@ -61,14 +62,14 @@ first = text.find(symbol, 0)</pre>
         In code it will look like ...
     </div>
     <div class="answer">
-        Something like this:
+        <p>Something like this:</p>
         <pre class="brush: python">
-def second_index(text: str, symbol: str) -> [int, None]:
+def second_index(text: str, symbol: str) -> int | None:
     if text.count(symbol) < 2: 
         return None
     first = text.find(symbol)</pre>
-        Thus, if in our input text the required element occurs less than 2 times, the function will return None.
-        If it occurs 2 or more times - the function will find the first occurrence of the character in a string.
+    <p>Thus, if in our input text the required element occurs less than 2 times, the function will return None.
+        If it occurs 2 or more times - the function will find the first occurrence of the character in a string.</p>
     </div>
 </div>
 
@@ -77,8 +78,8 @@ def second_index(text: str, symbol: str) -> [int, None]:
         But we need the second occurrence, don’t we?
     </div>
     <div class="answer">
-        That's right. Therefore, we are starting the search not from the very beginning of the string, but from the character following the position 
-        that we've found as the 'first'. To accomplish this, we just need to change the starting position of the search from 0 to the first+1.
+        <p>That's right. Therefore, we are starting the search not from the very beginning of the string, but from the character following the position 
+        that we've found as the 'first'. To accomplish this, we just need to change the starting position of the search from 0 to the first+1.</p>
     </div>
 </div>
 
@@ -87,17 +88,19 @@ def second_index(text: str, symbol: str) -> [int, None]:
         I need more help!
     </div>
     <div class="answer">
-        The final version of the program will look like this:
+        <p>The final version of the program will look like this:</p>
+        <div class="spoiler">
         <pre class="brush: python">
 def second_index(text: str, symbol: str) -> [int, None]:
     if text.count(symbol) < 2: 
         return None
     first = text.find(symbol)
     return text.find(symbol, first + 1)</pre>
-        If we try to find the character 'a' in the sentence "I'm learning Python and nothing else" by using this function,
+        </div>
+        <p>If we try to find the character 'a' in the sentence "I'm learning Python and nothing else" by using this function,
         we'll get 20. Because at first we will determine that the character 'a' occurs the first time in the position with the index 6 (first = 6),
         and then, when we start looking from the next character (first + 1), we'll determine that the next character 'a' occurs 
-        in the position with the index 20.
+        in the position with the index 20.</p>
     </div>
 </div>
         
