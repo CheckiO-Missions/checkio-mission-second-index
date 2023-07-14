@@ -5,8 +5,8 @@
 
 <p style="text-align: justify;">
 	Przeanalizujmy pierwszy przykład, w którym trzeba znaleźć drugie wystąpienie litery "s" w słowie "sims". Łatwo jest znaleźć jego pierwsze wystąpienie za pomocą funkcji
-{% if is_js %}<a target="_blank" href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">indexOf</a>{% else %}<a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.index">index</a> lub  , która wskaże, że "s" jest pierwszym symbolem w słowie "sims", a zatem indeks pierwszego wystąpienia wynosi 0. Ale musimy znaleźć drugie "s", które jest czwarte z rzędu, a to oznacza, że indeks drugiego wystąpienia (i odpowiedź na pytanie) wynosi 3. 
- <a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.find">find</a>{% endif %} </p>
+{% if is_js %}<a target="_blank" href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">indexOf</a>{% else %}<a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.index">index</a> lub <a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.find">find</a>{% endif %}, która wskaże, że "s" jest pierwszym symbolem w słowie "sims", a zatem indeks pierwszego wystąpienia wynosi 0. Ale musimy znaleźć drugie "s", które jest czwarte z rzędu, a to oznacza, że indeks drugiego wystąpienia (i odpowiedź na pytanie) wynosi 3. 
+  </p>
 
 <p>
    <strong>Dane wejściowe:</strong> Dwa ciągi znaków <span>(str{% if is_js %}ing{% endif %})</span>. 
