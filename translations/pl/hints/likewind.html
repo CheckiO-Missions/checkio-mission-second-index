@@ -1,0 +1,109 @@
+<body data-author="likewind">
+
+<div class="question-answer">
+    <div class="question">
+        Nie mam pojęcia jak rozwiązać to zadanie.
+    </div>
+    <div class="answer">
+        <p>Może Pan znaleźć pierwsze wystąpienie szukanego znaku w ciągu znaków. Następnie proszę przesunąć się o jeden znak dalej i ponownie znaleźć ten sam znak. 
+        Będzie to jego drugie wystąpienie w ciągu.</p>
+    </div>
+</div>    
+
+<div class="question-answer">
+    <div class="question">
+        Od czego zacząć?
+    </div>
+    <div class="answer">
+        <p>Przede wszystkim należy upewnić się, że wymagany znak rzeczywiście występuje w ciągu co najmniej dwa razy.
+        Jeśli tak nie jest, program powinien zwrócić None.
+        Pomoże Państwu w tym metoda <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=count#str.count'>str.count()</a>.</p>
+    </div>
+</div>    
+    
+<div class="question-answer">
+    <div class="question">
+        Jak powinien wyglądać kod i jak działa?
+    </div>
+    <div class="answer">
+        <p>Pierwsza część programu może wyglądać następująco:</p>
+        <pre class="brush: python">
+def second_index(text, symbol):
+
+    if text.count(symbol) < 2: 
+        return None</pre>
+        <p>Na przykład, jeśli mamy ciąg "jakiś tekst" i sprawdzamy literę "e", to program nie zwróci None. Ale jeśli zastąpimy
+        literę 's' za argument symbolu, wówczas program zwróci None, ponieważ 'some text'.count ('s') == 1 
+        a warunek 1 &lt; 2 jest spełniony.</p>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Co dalej?
+    </div>
+    <div class="answer">
+        <p>Teraz, gdy upewnili się Państwo, że w ciągu znaków rzeczywiście znajdują się co najmniej 2 wymagane znaki, nadszedł czas na znalezienie  
+        pozycję pierwszego wystąpienia. Metoda <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=find#str.find'>find</a> 
+        pomoże Państwu w tym.
+        Zwraca ona indeks pierwszego wystąpienia znaku znalezionego w ciągu. Na przykład:</p>
+        <pre class="brush: python">
+text = 'abcdec'
+symbol = 'c'
+first = text.find(symbol, 0)</pre>
+        <p>Proszę zauważyć, że 0 jest opcjonalne w nawiasach. To tylko pokazuje, gdzie funkcja
+        zaczyna szukać symbolu (0 oznacza, że zaczyna od samego początku ciągu). 
+        W tym przypadku "pierwszy" będzie równy 2, ponieważ znak "c" znajduje się w pozycji o indeksie 2.</p>
+    </div>
+</div>    
+
+<div class="question-answer">
+    <div class="question">
+        W kodzie będzie to wyglądać następująco ...
+    </div>
+    <div class="answer">
+        <p>Coś takiego:</p>
+        <pre class="brush: python">
+def second_index(text: str, symbol: str) -> int | None:
+            
+    if text.count(symbol) < 2: 
+        return None
+    first = text.find(symbol)</pre>
+    <p>Tak więc, jeśli w naszym tekście wejściowym wymagany element występuje mniej niż 2 razy, funkcja zwróci None.
+        Jeśli wystąpi 2 lub więcej razy - funkcja znajdzie pierwsze wystąpienie znaku w ciągu znaków.</p>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Ale my potrzebujemy drugiego wystąpienia, prawda?
+    </div>
+    <div class="answer">
+        <p>Zgadza się. Dlatego rozpoczynamy wyszukiwanie nie od samego początku ciągu, ale od znaku następującego po pozycji 
+        który uznaliśmy za "pierwszy". Aby to osiągnąć, wystarczy zmienić pozycję początkową wyszukiwania z 0 na pierwszą+1.</p>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Potrzebuję więcej pomocy!
+    </div>
+    <div class="answer">
+        <p>Ostateczna wersja programu będzie wyglądać następująco:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def second_index(text: str, symbol: str) -> int | None:
+            
+    if text.count(symbol) < 2: 
+        return None
+    first = text.find(symbol)
+    return text.find(symbol, first + 1)</pre>
+        </div>
+        <p>Jeśli spróbujemy znaleźć znak "a" w zdaniu "Uczę się Pythona i niczego więcej" za pomocą tej funkcji,
+        otrzymamy 20. Ponieważ najpierw ustalimy, że znak 'a' występuje po raz pierwszy w pozycji o indeksie 6 (first = 6),
+        a następnie, gdy zaczniemy szukać od następnego znaku (first + 1), ustalimy, że następny znak "a" występuje 
+        w pozycji o indeksie 20.</p>
+    </div>
+</div>
+        
+</body>
