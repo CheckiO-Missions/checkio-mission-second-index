@@ -1,0 +1,28 @@
+
+<p>
+    给您两个字符串，您必须找到第二个字符串在第一个字符串中第二次出现的索引。
+</p>
+
+<p style="text-align: justify;">
+	让我们来看第一个例子，您需要查找单词 "sims "中第二个出现的 "s"。使用函数
+{% if is_js %}<a target="_blank" href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">indexOf</a>{% else %}<a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.index">index</a> 或  ，它将指出 "s "是单词 "sims "中的第一个符号，因此第一次出现的索引为0。但是我们必须找到第二个 "s"，它是连续出现的第4个符号，这意味着第二次出现的索引（问题的答案）为3。 
+<a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.find">find</a>{% endif %} </p>
+
+<p>
+   <strong>输入</strong>两个字符串 <span>(str{% if is_js %}ing{% endif %})</span>. 
+</p>
+
+<p>
+   <strong>输出：</strong>整数 <span>({% if is_js %}number{% else %}int{% endif %})</span>或 <span>{% if is_js %}null{% else %}None{% endif %}</span>.
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>示例：</strong>
+    </p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+
