@@ -65,6 +65,7 @@ first = text.find(symbol, 0)</pre>
         <p>Something like this:</p>
         <pre class="brush: python">
 def second_index(text: str, symbol: str) -> int | None:
+            
     if text.count(symbol) < 2: 
         return None
     first = text.find(symbol)</pre>
@@ -91,7 +92,8 @@ def second_index(text: str, symbol: str) -> int | None:
         <p>The final version of the program will look like this:</p>
         <div class="spoiler">
         <pre class="brush: python">
-def second_index(text: str, symbol: str) -> [int, None]:
+def second_index(text: str, symbol: str) -> int | None:
+            
     if text.count(symbol) < 2: 
         return None
     first = text.find(symbol)
