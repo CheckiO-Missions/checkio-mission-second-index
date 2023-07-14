@@ -3,34 +3,24 @@
     You are given two strings and you have to find an index of the second occurrence of the second string in the first one.
 </p>
 
-<p>
-	Let's go through the first example where you need to find the second occurrence of "s" in a word "sims". It’s easy to find its first occurrence with a function 
-{% if interpreter.slug == "js-node" %}
-
-	<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">indexOf</a>
-
-{% else %}
-
-	<a href="https://docs.python.org/3/library/stdtypes.html#str.index">index</a> or <a href="https://docs.python.org/3/library/stdtypes.html#str.find">find</a> 
-
-{% endif %}
-
-	which will point out that "s" is the first symbol in a word "sims" and therefore the index of the first occurrence is 0. But we have to find the second "s" which is 4th in a row and that means that the index of the second occurrence (and the answer to a question) is 3. 
+<p style="text-align: justify;">
+	Let's go through the first example where you need to find the second occurrence of "s" in a word "sims". It’s easy to find its first occurrence with a function
+{% if is_js %}<a target="_blank" href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">indexOf</a>{% else %}<a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.index">index</a> or <a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.find">find</a>{% endif %} which will point out that "s" is the first symbol in a word "sims" and therefore the index of the first occurrence is 0. But we have to find the second "s" which is 4th in a row and that means that the index of the second occurrence (and the answer to a question) is 3. 
 </p>
 
 <p>
-    <strong>Input: </strong> Two strings. 
+    <strong>Input:</strong> Two strings <span translate="no">(str{% if is_js %}ing{% endif %})</span>. 
 </p>
 
 <p>
-    <strong>Output: </strong> Int or {% if interpreter.slug == "js-node" %}undefined{% else %}None{% endif %}
+    <strong>Output:</strong> Integer <span translate="no">({% if is_js %}number{% else %}int{% endif %})</span> or <span translate="no">{% if is_js %}null{% else %}None{% endif %}</span>.
 </p>
 
 
 
 <div class="for_info_only">
     <p>
-        <strong>Example:</strong>
+        <strong>Examples:</strong>
     </p>
 
 <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>

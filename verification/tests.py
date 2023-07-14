@@ -31,7 +31,7 @@ TESTS = {
         {
             "input": ["hi mr Mayor", " "],
             "answer": 5
-        }
+        },
     ],
     "Extra": [
         {
@@ -49,6 +49,6 @@ TESTS = {
         {
             "input": ["three occurrences", "r"],
             "answer": 10
-        }
+        },
     ]
 }
