@@ -1,0 +1,109 @@
+<body data-author="likewind">
+
+<div class="question-answer">
+    <div class="question">
+        Je n'ai aucune idée de la manière de résoudre cette tâche.
+    </div>
+    <div class="answer">
+        <p>Vous pouvez trouver la première occurrence du caractère que vous recherchez dans une chaîne de caractères. Ensuite, déplacez-vous d'un caractère le long de la chaîne et trouvez à nouveau le même caractère. 
+        Il s'agira de sa deuxième occurrence dans la chaîne.</p>
+    </div>
+</div>    
+
+<div class="question-answer">
+    <div class="question">
+        Par où commencer?
+    </div>
+    <div class="answer">
+        <p>Tout d'abord, vous devez vous assurer que le caractère requis apparaît effectivement dans la chaîne au moins deux fois.
+        Si ce n'est pas le cas, le programme doit renvoyer None.
+        La méthode <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=count#str.count'>str.count()</a> vous aidera.</p>
+    </div>
+</div>    
+    
+<div class="question-answer">
+    <div class="question">
+        À quoi doit ressembler le code et comment fonctionne-t-il?
+    </div>
+    <div class="answer">
+        <p>La première partie du programme peut ressembler à ceci:</p>
+        <pre class="brush: python">
+def second_index(text, symbol):
+
+    if text.count(symbol) < 2: 
+        return None</pre>
+        <p>Par exemple, si nous disposons d'une chaîne de caractères "un texte" et que nous vérifions la lettre "e", le programme ne renverra aucun résultat. Mais si nous remplaçons
+        la lettre 's' à l'argument symbole, le programme renverra None, puisque 'some text'.count ('s') == 1 
+        et que la condition 1 &lt; 2 est remplie.</p>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Que se passe-t-il ensuite?
+    </div>
+    <div class="answer">
+        <p>Maintenant que vous vous êtes assuré qu'il y a bien au moins 2 caractères obligatoires dans la chaîne, il est temps de trouver la position de la première occurrence  
+        la position de la première occurrence. La méthode <a target="_blank" href='https://docs.python.org/3/library/stdtypes.html?highlight=find#str.find'>find</a> 
+        vous aidera à le faire.
+        Elle renvoie l'index de la première occurrence de caractère trouvée dans la chaîne. Par exemple:</p>
+        <pre class="brush: python">
+text = 'abcdec'
+symbol = 'c'
+first = text.find(symbol, 0)</pre>
+        <p>Veuillez noter que le chiffre 0 est facultatif entre parenthèses. Cela montre seulement où la fonction
+        commence à chercher le symbole (0 signifie qu'elle commence au tout début de la chaîne). 
+        Dans ce cas, le "premier" sera égal à 2, puisque le caractère "c" se trouve à la position ayant l'indice 2.</p>
+    </div>
+</div>    
+
+<div class="question-answer">
+    <div class="question">
+        Dans le code, cela ressemblera à ...
+    </div>
+    <div class="answer">
+        <p>Quelque chose comme ça:</p>
+        <pre class="brush: python">
+def second_index(text: str, symbol: str) -> int | None:
+            
+    if text.count(symbol) < 2: 
+        return None
+    first = text.find(symbol)</pre>
+    <p>Ainsi, si l'élément requis apparaît moins de 2 fois dans notre texte d'entrée, la fonction renverra None.
+        S'il apparaît 2 fois ou plus, la fonction trouvera la première occurrence du caractère dans une chaîne de caractères.</p>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Mais nous avons besoin de la deuxième occurrence, n'est-ce pas?
+    </div>
+    <div class="answer">
+        <p>C'est exact. Par conséquent, nous commençons la recherche non pas au tout début de la chaîne, mais à partir du caractère qui suit la position 
+        que nous avons considérée comme la "première". Pour ce faire, il suffit de changer la position de départ de la recherche de 0 à la première+1.</p>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        J'ai besoin d'aide!
+    </div>
+    <div class="answer">
+        <p>La version finale du programme ressemblera à ceci:</p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def second_index(text: str, symbol: str) -> int | None:
+            
+    if text.count(symbol) < 2: 
+        return None
+    first = text.find(symbol)
+    return text.find(symbol, first + 1)</pre>
+        </div>
+        <p>Si nous essayons de trouver le caractère "a" dans la phrase "J'apprends Python et rien d'autre" en utilisant cette fonction,
+        nous obtiendrons 20. En effet, dans un premier temps, nous déterminerons que le caractère 'a' apparaît pour la première fois à la position d'indice 6 (first = 6),
+        et ensuite, lorsque nous commencerons à regarder à partir du caractère suivant (premier + 1), nous déterminerons que le caractère suivant 'a' se produit 
+        à la position d'indice 20.</p>
+    </div>
+</div>
+        
+</body>
