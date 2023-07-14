@@ -1,36 +1,28 @@
+
 <p>
-   Дано два рядка, ти маєш знайти індекс другого входження другого рядка в першому рядку.
+    Вам задано два рядки, і ви повинні знайти індекс другого входження другого рядка у першому.
+</p>
+
+<p style="text-align: justify;">
+	Розглянемо перший приклад, де потрібно знайти друге входження літери "s" у слові "sims". Його перше входження легко знайти за допомогою функції
+{% if is_js %}<a target="_blank" href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">indexOf</a>{% else %}<a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.index">index</a> або  , яка покаже, що "s" є першим символом у слові "sims", а отже, індекс першого входження дорівнює 0. Але нам потрібно знайти другу "s", яка є 4-ю за рахунком, а це означає, що індекс другого входження (і відповідь на питання) дорівнює 3. 
+ <a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.find">find</a>{% endif %} </p>
+
+<p>
+   <strong>Вхідні дані:</strong> Два рядки <span>(str{% if is_js %}ing{% endif %})</span>. 
 </p>
 
 <p>
-  Давай розглянемо перший приклад, де тобі потрібно знайти друге входження "s" у слові "sims". Легко знайти його перше виникнення за допомогою функції
-{% if interpreter.slug == "js-node" %}
-
-	<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">indexOf</a>
-
-{% else %}
-
-	<a href="https://docs.python.org/3/library/stdtypes.html#str.index">index</a> or <a href="https://docs.python.org/3/library/stdtypes.html#str.find">find</a> 
-
-{% endif %}
-
-	яка вкаже що "s" є першим символом в слові "sims" і його індекс "0". Але нам потрібно знайти другу "s", яка є четвертою в рядку і це означає що індекс другого входження "3" (і це відповідь до задачі).
-</p>
-
-<p>
-    <strong>Вхідні дані: </strong> Два рядка.
-</p>
-
-<p>
-    <strong>Вихідні дані: </strong> Ціле число або {% if interpreter.slug == "js-node" %}undefined{% else %}None{% endif %}
+   <strong>Вихідні дані:</strong> Ціле число <span>({% if is_js %}number{% else %}int{% endif %})</span> або <span>{% if is_js %}null{% else %}None{% endif %}</span>.
 </p>
 
 
 
 <div class="for_info_only">
     <p>
-        <strong>Приклад:</strong>
+        <strong>Приклади:</strong>
     </p>
 
 <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
+
