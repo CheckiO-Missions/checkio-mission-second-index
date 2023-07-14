@@ -5,8 +5,8 @@
 
 <p style="text-align: justify;">
 	Розглянемо перший приклад, де потрібно знайти друге входження літери "s" у слові "sims". Його перше входження легко знайти за допомогою функції
-{% if is_js %}<a target="_blank" href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">indexOf</a>{% else %}<a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.index">index</a> або  , яка покаже, що "s" є першим символом у слові "sims", а отже, індекс першого входження дорівнює 0. Але нам потрібно знайти другу "s", яка є 4-ю за рахунком, а це означає, що індекс другого входження (і відповідь на питання) дорівнює 3. 
- <a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.find">find</a>{% endif %} </p>
+{% if is_js %}<a target="_blank" href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">indexOf</a>{% else %}<a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.index">index</a> або <a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.find">find</a>{% endif %}, яка покаже, що "s" є першим символом у слові "sims", а отже, індекс першого входження дорівнює 0. Але нам потрібно знайти другу "s", яка є 4-ю за рахунком, а це означає, що індекс другого входження (і відповідь на питання) дорівнює 3. 
+  </p>
 
 <p>
    <strong>Вхідні дані:</strong> Два рядки <span>(str{% if is_js %}ing{% endif %})</span>. 
