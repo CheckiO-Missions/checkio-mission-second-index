@@ -1,0 +1,28 @@
+
+<p>
+    Sie erhalten zwei Zeichenketten und müssen einen Index für das zweite Vorkommen der zweiten Zeichenkette in der ersten finden.
+</p>
+
+<p style="text-align: justify;">
+	Gehen wir das erste Beispiel durch, bei dem Sie das zweite Vorkommen von "s" in dem Wort "sims" finden müssen. Es ist einfach, das erste Vorkommen mit einer Funktion zu finden
+{% if is_js %}<a target="_blank" href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">indexOf</a>{% else %}<a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.index">index</a> oder  zu finden, die darauf hinweist, dass "s" das erste Symbol im Wort "sims" ist und der Index des ersten Vorkommens daher 0 ist. Aber wir müssen das zweite "s" finden, das das vierte in einer Reihe ist und das bedeutet, dass der Index des zweiten Vorkommens (und die Antwort auf eine Frage) 3 ist. 
+ <a target="_blank" href="https://docs.python.org/3/library/stdtypes.html#str.find">find</a>{% endif %} </p>
+
+<p>
+   <strong>Eingabe:</strong> Zwei Zeichenketten <span>(str{% if is_js %}ing{% endif %})</span>. 
+</p>
+
+<p>
+   <strong>Ausgabe:</strong> Ganzzahl <span>({% if is_js %}number{% else %}int{% endif %})</span> oder <span>{% if is_js %}null{% else %}None{% endif %}</span>.
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Beispiele:</strong>
+    </p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+
